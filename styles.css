@@ -11,6 +11,14 @@ body{
     background: #080808;
     color: #fff;
 }
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
 #header{
     width: 100%;
     height: 100vh;
@@ -282,10 +290,47 @@ nav ul li a:hover::after{
     color: rgb(245, 77, 77);
     transform: translate3d(-5px);
 }
-.btn.btn2{
-    display: inline-block;
-    background: rgb(236, 41, 41);
+
+.btn.btn2 {
+  display: inline-block;
+  background: rgb(236, 41, 41);
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  font-weight: 600;
+  font-size: 14px;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  box-shadow: 0 6px 15px rgba(236, 41, 41, 0.3);
 }
+
+.btn.btn2::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+  transition: left 0.5s ease;
+}
+
+.btn.btn2:hover::before {
+  left: 100%;
+}
+
+.btn.btn2:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(236, 41, 41, 0.4);
+}
+
+.btn.btn2:active {
+  transform: translateY(0);
+}
+
 .contact-right form{
     width: 100%;
 }
